@@ -23,3 +23,16 @@
     display: flex;
     flex-grow: 1;
 }
+
+#tools{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+button{
+    width: 100px;
+}

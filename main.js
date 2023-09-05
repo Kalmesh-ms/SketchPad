@@ -8,6 +8,12 @@ let xGrid =[];
 let yGrid =[];
 
 const grid = document.querySelector('#grid');
+const blackInk = document.querySelector('#black');
+const eraser = document.querySelector('#eraser');
+
+blackInk.onclick = () => (setColor('black'));
+eraser.onclick = () => (setColor('white'));
+console.log(currColor);
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown =true);
@@ -35,11 +41,16 @@ function setColor(newColor){
     currColor = newColor;
 }
 
+
+
 function changeColor (e){
     if(e.type === 'mouseover' && !mouseDown)return;
     e.target.classList.add('colored');
     if (currColor === 'black'){
         e.target.style.backgroundColor = 'black';
+    }
+    if (currColor === 'white'){
+        e.target.style.backgroundColor ='white';
     }
 }
 
