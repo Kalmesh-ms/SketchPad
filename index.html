@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="style.css">
     <title>etch-a-sketch</title>
 </head>
-<body>
+<body class="switchTheme">
 
+    <h1 class="header switchTheme" >Pixel <a style="color: red; font-weight: bolder;">>></a> Sketchpad</h1>
 <div class="container">
-    <h1 class="header">Pixel <a style="color: red; font-weight: bolder;">>></a> Sketchpad</h1>
     <div class="sketchpad">
-        <div id="tools">
+        <div id="tools" class="switchTheme">
+            <!-- <button id="theme">Switch Theme</button> -->
             <button id="black">Black Ink</button>
             <button id="eraser">Eraser</button>
+            <button id="rainbow">Rainbow</button>
         </div>
         <div id="grid"></div>
     </div>

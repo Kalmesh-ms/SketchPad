@@ -10,14 +10,17 @@ let yGrid =[];
 const grid = document.querySelector('#grid');
 const blackInk = document.querySelector('#black');
 const eraser = document.querySelector('#eraser');
+const rainbow = document.querySelector('#rainbow');
 
 blackInk.onclick = () => (setColor('black'));
 eraser.onclick = () => (setColor('white'));
-console.log(currColor);
+rainbow.onclick = () => (setColor('rainbow'));
+
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown =true);
 document.body.onmouseup = () => (mouseDown =false);
+
 
 
 function setGridSize (currGridSize){
@@ -52,6 +55,12 @@ function changeColor (e){
     if (currColor === 'white'){
         e.target.style.backgroundColor ='white';
     }
+    if(currColor === 'rainbow'){
+        randomR = Math.floor((Math.random())*256);
+        randomG = Math.floor((Math.random())*256);
+        randomB = Math.floor((Math.random())*256);
+        e.target.style.backgroundColor =`rgb(${randomR},${randomG},${randomB})`;
+    }
 }
 
 
@@ -66,3 +75,9 @@ function changeColor (e){
 
 setGridSize(DEFAULT_GRID_SIZE);
 
+// const theme = document.querySelector('#theme');
+// const toggleTheme = document.querySelector('.switchTheme')
+// theme.onclick = () => (switchTheme());
+// function switchTheme(){
+//   toggleTheme.classList.toggle('switchTheme')
+// }

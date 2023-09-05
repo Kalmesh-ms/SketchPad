@@ -3,7 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    width: fit-content;
+    margin: auto;
 
+}
+.header{
+    text-align: center;
 }
 
 .sketchpad{
@@ -36,3 +42,8 @@
 button{
     width: 100px;
 }
+
+/* .switchTheme{
+    background-color: black;
+    color: white;
+} */
