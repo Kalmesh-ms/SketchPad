@@ -8,13 +8,15 @@ let xGrid =[];
 let yGrid =[];
 
 const grid = document.querySelector('#grid');
-const blackInk = document.querySelector('#black');
-const eraser = document.querySelector('#eraser');
-const rainbow = document.querySelector('#rainbow');
+const blackInkBtn = document.querySelector('#black');
+const eraserBtn = document.querySelector('#eraser');
+const rainbowBtn = document.querySelector('#rainbow');
+const clearBtn = document.querySelector('#clear');
 
-blackInk.onclick = () => (setColor('black'));
-eraser.onclick = () => (setColor('white'));
-rainbow.onclick = () => (setColor('rainbow'));
+blackInkBtn.onclick = () => (setColor('black'));
+eraserBtn.onclick = () => (setColor('white'));
+rainbowBtn.onclick = () => (setColor('rainbow'));
+clearBtn.addEventListener('click', cleared);
 
 
 let mouseDown = false;
@@ -64,13 +66,10 @@ function changeColor (e){
 }
 
 
-
-
-
-
-
-
-
+function cleared(){
+    let clearDivs = document.querySelectorAll('div > .px');
+    clearDivs.forEach((clearDiv)=> clearDiv.style.backgroundColor = 'white');
+}
 
 
 setGridSize(DEFAULT_GRID_SIZE);
