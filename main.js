@@ -12,11 +12,14 @@ const blackInkBtn = document.querySelector('#black');
 const eraserBtn = document.querySelector('#eraser');
 const rainbowBtn = document.querySelector('#rainbow');
 const clearBtn = document.querySelector('#clear');
+const GridSizBtn = document.querySelector('#changeGridSize')
 
 blackInkBtn.onclick = () => (setColor('black'));
 eraserBtn.onclick = () => (setColor('white'));
 rainbowBtn.onclick = () => (setColor('rainbow'));
-clearBtn.addEventListener('click', cleared);
+clearBtn.onclick = () => cleared();
+GridSizBtn.onclick = () => changeGridSize();
+
 
 
 let mouseDown = false;
@@ -39,7 +42,20 @@ function setGridSize (currGridSize){
             yGrid[j] = newDiv;
             xGrid[i].appendChild(yGrid[j]);
         }
+    }
 }
+
+function changeGridSize (){
+    inputSize = parseInt(prompt('Input Size of Square Grid',"16"));
+    if(!inputSize || inputSize > 100 || inputSize < 0 ){
+        alert('Cancelled. Enter a number Between 1 to 100');
+    }
+    else{
+        while(grid.firstChild){
+            grid.removeChild(grid.lastChild);
+        }
+        setGridSize(inputSize);
+    }
 }
 
 function setColor(newColor){
@@ -49,7 +65,7 @@ function setColor(newColor){
 
 
 function changeColor (e){
-    if(e.type === 'mouseover' && !mouseDown)return;
+    if(e.type === 'mouseover' && !mouseDown )return;
     e.target.classList.add('colored');
     if (currColor === 'black'){
         e.target.style.backgroundColor = 'black';
