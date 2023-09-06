@@ -21,7 +21,6 @@ clearBtn.onclick = () => cleared();
 GridSizBtn.onclick = () => changeGridSize();
 
 
-
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown =true);
 document.body.onmouseup = () => (mouseDown =false);
